@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var temp = 0
-    
+    var flag = 0
     @IBOutlet var caculaterDisplay: UITextField!
     
     
@@ -65,47 +65,77 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonCaculator(_ sender: Any) {
-        var sum = 0
-        sum = temp + Int(caculaterDisplay.text!)!
-        caculaterDisplay.text = "\(sum)"
+        if(flag==1)
+        {
+            var sum = 0
+            sum = temp + Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(sum)"
+            
+        }
+        if(flag==2)
+        {
+            var Minus = 0
+            
+            Minus = temp - Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(Minus)"        }
+        
+        if(flag==3)
+        {
+            var Multiply = 0
+            Multiply = temp * Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(Multiply)"              }
+        
+        if(flag==4)
+        {
+            var Divide = 0
+            Divide = temp % Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(Divide)"           }
+        
     }
     
     @IBAction func buttonAdd(_ sender: Any) {
         temp = Int(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         
-        
+        flag = 1
         
     }
     
     
     @IBAction func buttonMinus(_ sender: Any) {
-        
-        var sum = 0
-        sum = temp - Int(caculaterDisplay.text!)!
-        caculaterDisplay.text = "\(sum)"
+        temp = Int(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 2
         
     }
     
     
     @IBAction func buttonMultiply(_ sender: Any) {
         
-        var sum = 0
-        sum = temp * Int(caculaterDisplay.text!)!
-        caculaterDisplay.text = "\(sum)"
-        
+        temp = Int(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 3
     }
     
     @IBAction func buttonDivide(_ sender: Any) {
         
-        var sum = 0
-        sum = temp % Int(caculaterDisplay.text!)!
-        caculaterDisplay.text = "\(sum)"
+        temp = Int(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 4
     }
     
     @IBAction func clear(_ sender: Any) {
         caculaterDisplay.text = ""
     }
+    
+    
+    @IBAction func AClear(_ sender: Any) {
+        caculaterDisplay.text = "0"
+        temp = Int(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
