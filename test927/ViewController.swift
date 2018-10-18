@@ -9,6 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
     var temp = 0
     var flag = 0
     @IBOutlet var caculaterDisplay: UITextField!
@@ -64,6 +69,10 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
+    
+    
     @IBAction func buttonCaculator(_ sender: Any) {
         if(flag==1)
         {
@@ -74,22 +83,22 @@ class ViewController: UIViewController {
         }
         if(flag==2)
         {
-            var Minus = 0
+            var minus = 0
             
-            Minus = temp - Int(caculaterDisplay.text!)!
-            caculaterDisplay.text = "\(Minus)"        }
+            minus = temp - Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(minus)"        }
         
         if(flag==3)
         {
-            var Multiply = 0
-            Multiply = temp * Int(caculaterDisplay.text!)!
-            caculaterDisplay.text = "\(Multiply)"              }
+            var multiply = 0
+            multiply = temp * Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(multiply)"              }
         
         if(flag==4)
         {
-            var Divide = 0
-            Divide = temp % Int(caculaterDisplay.text!)!
-            caculaterDisplay.text = "\(Divide)"           }
+            var divide = 0
+            divide = temp / Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(divide)"           }
         
     }
     
@@ -137,11 +146,7 @@ class ViewController: UIViewController {
     
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
+    
 
 }
 
