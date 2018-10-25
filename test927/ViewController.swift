@@ -72,12 +72,16 @@ class ViewController: UIViewController {
     
     
     
+    @IBAction func buttonpoint(_ sender: Any) {
+        caculaterDisplay.text = caculaterDisplay.text! + "."    }
     
     @IBAction func buttonCaculator(_ sender: Any) {
         if(flag==1)
         {
             var sum = 0
-            sum = temp + Int(caculaterDisplay.text!)!
+            sum = temp +
+                Int(caculaterDisplay.text!)!
+            
             caculaterDisplay.text = "\(sum)"
             
         }
@@ -85,25 +89,32 @@ class ViewController: UIViewController {
         {
             var minus = 0
             
-            minus = temp - Int(caculaterDisplay.text!)!
+            minus = temp -
+                Int(caculaterDisplay.text!)!
+            
             caculaterDisplay.text = "\(minus)"        }
         
         if(flag==3)
         {
             var multiply = 0
             multiply = temp * Int(caculaterDisplay.text!)!
+            
             caculaterDisplay.text = "\(multiply)"              }
         
         if(flag==4)
         {
             var divide = 0
-            divide = temp / Int(caculaterDisplay.text!)!
+            divide = temp /
+                Int(caculaterDisplay.text!)!
+            
             caculaterDisplay.text = "\(divide)"           }
         
     }
     
     @IBAction func buttonAdd(_ sender: Any) {
-        temp = Int(caculaterDisplay.text!)!
+        temp =
+            Int(caculaterDisplay.text!)!
+        
         caculaterDisplay.text = ""
         
         flag = 1
@@ -112,7 +123,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func buttonMinus(_ sender: Any) {
-        temp = Int(caculaterDisplay.text!)!
+        temp =
+            Int(caculaterDisplay.text!)!
+        
         caculaterDisplay.text = ""
         flag = 2
         
@@ -121,14 +134,18 @@ class ViewController: UIViewController {
     
     @IBAction func buttonMultiply(_ sender: Any) {
         
-        temp = Int(caculaterDisplay.text!)!
+        temp =
+            Int(caculaterDisplay.text!)!
+        
         caculaterDisplay.text = ""
         flag = 3
     }
     
     @IBAction func buttonDivide(_ sender: Any) {
         
-        temp = Int(caculaterDisplay.text!)!
+        temp =
+            Int(caculaterDisplay.text!)!
+        
         caculaterDisplay.text = ""
         flag = 4
     }
@@ -140,7 +157,9 @@ class ViewController: UIViewController {
     
     @IBAction func AClear(_ sender: Any) {
         caculaterDisplay.text = "0"
-        temp = Int(caculaterDisplay.text!)!
+        temp =
+            Int(caculaterDisplay.text!)!
+        
         caculaterDisplay.text = ""
     }
     
