@@ -14,8 +14,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    var temp = 0
-    var flag = 0
+    var caculatorOperator:Int = 0
+    var temp:Double = 0
+    
+    var calFlag:Int = 0
     @IBOutlet var caculaterDisplay: UITextField!
     
     
@@ -76,16 +78,16 @@ class ViewController: UIViewController {
         caculaterDisplay.text = caculaterDisplay.text! + "."    }
     
     @IBAction func buttonCaculator(_ sender: Any) {
-        if(flag==1)
+        if(calFlag==1)
         {
             var sum = 0
             sum = temp +
-                Int(caculaterDisplay.text!)!
+                Int(caculaterDisplay.text!)!                                                                                                                                                                                                                                      
             
             caculaterDisplay.text = "\(sum)"
             
         }
-        if(flag==2)
+        if(calFlag==2)
         {
             var minus = 0
             
@@ -94,14 +96,14 @@ class ViewController: UIViewController {
             
             caculaterDisplay.text = "\(minus)"        }
         
-        if(flag==3)
+        if(calFlag==3)
         {
             var multiply = 0
             multiply = temp * Int(caculaterDisplay.text!)!
             
             caculaterDisplay.text = "\(multiply)"              }
         
-        if(flag==4)
+        if(calFlag==4)
         {
             var divide = 0
             divide = temp /
@@ -117,7 +119,7 @@ class ViewController: UIViewController {
         
         caculaterDisplay.text = ""
         
-        flag = 1
+        calFlag = 1
         
     }
     
@@ -127,7 +129,7 @@ class ViewController: UIViewController {
             Int(caculaterDisplay.text!)!
         
         caculaterDisplay.text = ""
-        flag = 2
+        calFlag = 2
         
     }
     
@@ -138,7 +140,7 @@ class ViewController: UIViewController {
             Int(caculaterDisplay.text!)!
         
         caculaterDisplay.text = ""
-        flag = 3
+        calFlag = 3
     }
     
     @IBAction func buttonDivide(_ sender: Any) {
@@ -147,7 +149,7 @@ class ViewController: UIViewController {
             Int(caculaterDisplay.text!)!
         
         caculaterDisplay.text = ""
-        flag = 4
+        calFlag = 4
     }
     
     @IBAction func clear(_ sender: Any) {
@@ -155,8 +157,14 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func AClear(_ sender: Any) {
-        caculaterDisplay.text = "0"
+    @IBAction func AClear(_ sender: Any){
+    
+    caculaterOperator = 0
+    temp = 0
+        
+        calFlag = 0
+    
+    caculaterDisplay.text = "0"
         temp =
             Int(caculaterDisplay.text!)!
         

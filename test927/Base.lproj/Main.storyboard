@@ -153,7 +153,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWv-CQ-ft3">
-                                <rect key="frame" x="159" y="456" width="46" height="30"/>
+                                <rect key="frame" x="159" y="456" width="46" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="AClear"/>
                                 <connections>
