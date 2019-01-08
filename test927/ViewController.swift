@@ -112,7 +112,7 @@ caculaterDisplay.text = "\(temp * Double(caculaterDisplay.text!)!)"
         caculaterOperator = 3
         temp = Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
-        calFlag = 3
+        calFlag = 2
     }
     
 
@@ -120,17 +120,23 @@ caculaterDisplay.text = "\(temp * Double(caculaterDisplay.text!)!)"
         caculaterOperator = 4
         temp = Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
-        calFlag = 4
+        
+        calFlag = 2
         
     }
 
     @IBAction func buttonAdd(_ sender: Any) {
+        if caculaterOperator == 1{
+            caculaterDisplay.text = "\(temp + Double(caculaterDisplay.text!)!)"
+        }
         caculaterOperator = 1
         temp = Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
-        calFlag = 1
+        caculaterOperator = 1
+        calFlag = 2
     }
     @IBAction func clear(_ sender: Any) {
+        
         caculaterOperator = 0
         calFlag = 0
         temp = 0
